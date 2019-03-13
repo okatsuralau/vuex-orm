@@ -1,3 +1,21 @@
+function createCommonjsModule(fn, module) {
+	return module = { exports: {} }, fn(module, module.exports), module.exports;
+}
+
+var reflect_ownkeys = createCommonjsModule(function (module) {
+if (typeof Reflect === 'object' && typeof Reflect.ownKeys === 'function') {
+  module.exports = Reflect.ownKeys;
+} else if (typeof Object.getOwnPropertySymbols === 'function') {
+  module.exports = function Reflect_ownKeys(o) {
+    return (
+      Object.getOwnPropertyNames(o).concat(Object.getOwnPropertySymbols(o))
+    );
+  };
+} else {
+  module.exports = Object.getOwnPropertyNames;
+}
+});
+
 /*eslint-disable */
 if (!String.prototype.startsWith) {
     String.prototype.startsWith = function (search, pos) {

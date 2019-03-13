@@ -1,6 +1,6 @@
 /*eslint-disable */
 
-import 'reflect.ownkeys'
+import Reflect from 'core-js/es6/reflect'
 
 if (!String.prototype.startsWith) {
   String.prototype.startsWith = function (search, pos) {
